@@ -5,9 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# widthはviewportのサイズを制御,devise-widthで表示領域の幅を端末の幅に対応 %>
+    <%# initial-scaleは、そのページが表示されたときの倍率の設定。1を指定することで、1倍の拡大率、つまり拡大や縮小しないページを表示。 %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  <%# webpackで.cssや.scssファイルのスタイルシートを対応 %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
+
 
   <body>
     <%= yield %>
